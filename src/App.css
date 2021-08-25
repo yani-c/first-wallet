@@ -1,4 +1,72 @@
 .App {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #fbbcf8;
+}
+
+.containerButtons {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 50%;
+  height: 30%;
+  align-self: center;
+}
+
+.button {
+  height: fit-content;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  background-color: #c80cbf;
+  padding: 20px;
+  font-family: inherit;
+  color: white;
+  text-shadow: 1px 1px rgb(0 0 0 / 0.2);
+  font-weight: bold;
+}
+
+.donateContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-right: 1%;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: #c4a6c2;
+  border-style: solid;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.input:focus {
+  outline: none;
+  box-shadow: 0px 0px 1px 1px #c80cbf;
+}
+
+.donateButton {
+  margin-left: 1%;
+  padding: 5px;
+}
+
+.donateBox {
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.text {
+  font-family: inherit;
+  color: white;
+  text-shadow: 2px 2px rgb(0 0 0 / 0.2);
+  font-weight: bold;
   text-align: center;
 }
 

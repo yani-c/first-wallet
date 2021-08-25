@@ -39,12 +39,18 @@ function OldVersion() {
   }
 
   return (
-    <div className="App">
-      {!connected && <button onClick={handleMetamask}>Connect Metamask</button>}
+    <div className="containerButtons">
+      {!connected && (
+        <button className="button" onClick={handleMetamask}>
+          Connect Metamask
+        </button>
+      )}
       {connected && !currentAccount && (
         <div>
-          <h1>Connected!</h1>
-          <button onClick={handleAccount}>Connect account</button>
+          <h1 className="text">Connected!</h1>
+          <button className="button" onClick={handleAccount}>
+            Connect account
+          </button>
         </div>
       )}
       {currentAccount && <h1>Account connected</h1>}

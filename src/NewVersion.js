@@ -31,23 +31,29 @@ function NewVersion() {
   };
 
   return (
-    <div>
+    <div className="containerButtons">
       {!account ? (
-        <button onClick={handleConnect}>Connect Metamask account</button>
+        <button className="button" onClick={handleConnect}>
+          Connect Metamask account
+        </button>
       ) : donated ? (
-        <h1>Thanks!</h1>
+        <h1 className="text">Thanks!</h1>
       ) : (
-        <div>
-          <h1>Donate here</h1>
-          <label>
+        <div className="donateContainer">
+          <h1 className="text">Donate here</h1>
+          <div className="donateBox">
             <input
-              type="number"
+              className="input"
+              type="text"
+              inputmode="numeric"
               name="amount"
               value={amount}
               onChange={handleChange}
             />
-          </label>
-          <button onClick={handleDonate}>Donate!</button>
+            <button className="button donateButton" onClick={handleDonate}>
+              Donate!
+            </button>
+          </div>
         </div>
       )}
     </div>
