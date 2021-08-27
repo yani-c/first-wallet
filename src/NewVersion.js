@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Web3 from "web3-eth";
+import Web3 from "web3";
 
 function NewVersion() {
   const [account, setAccount] = useState();
@@ -9,25 +9,25 @@ function NewVersion() {
 
   const handleConnect = async () => {
     const web = new Web3(Web3.givenProvider);
-    const accounts = await web.requestAccounts();
+    const accounts = await web.eth.requestAccounts();
     setAccount(accounts[0]);
-    console.log("aca accounts", accounts);
     setWeb3(web);
   };
 
   const handleDonate = () => {
-    web3
+    const amountToSend = web3.utils.toWei(amount.toString(), "ether"); // Convert to wei value
+    web3.eth
       .sendTransaction({
         from: account,
         to: "0x5E18019cad31Ac7F3AEDDa87B89b3ea7aD3D4684",
-        value: amount,
+        value: amountToSend,
       })
       .then(() => setDonated(true))
       .catch((e) => console.log(e));
   };
 
   const handleChange = (e) => {
-    setAmount(e.amount);
+    setAmount(e.nativeEvent.data);
   };
 
   return (
